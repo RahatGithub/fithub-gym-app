@@ -1,6 +1,7 @@
 // src/pages/Goals.jsx
 import { useNavigate } from 'react-router-dom';
 import { useSubscription } from '../contexts/SubscriptionContext';
+import { motion, AnimatePresence } from 'framer-motion';
 
 function Goals() {
   const navigate = useNavigate();
@@ -42,59 +43,97 @@ function Goals() {
       type: 'SET_GOAL', 
       payload: goal 
     });
-    
-    // Optional: Navigate to next page
-    // navigate('/addons');
+  };
+  
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+  
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 }
   };
   
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8 text-center">Choose Your Fitness Goals</h1>
+      <motion.h1 
+        className="text-3xl font-bold mb-8 text-center"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        Choose Your Fitness Goals
+      </motion.h1>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        {goals.map((goal) => {
-          const isSelected = state.goal?.id === goal.id;
-          
-          return (
-            <div 
-              key={goal.id}
-              className={`card cursor-pointer transition-all ${
-                isSelected ? 'bg-primary text-primary-content' : 'bg-base-100'
-              } ${state.goal && !isSelected ? 'opacity-50' : ''} shadow-xl`}
-              onClick={() => handleSelectGoal(goal)}
-            >
-              <div className="card-body">
-                <h2 className="card-title">
-                  <span className="text-2xl">{goal.icon}</span>
-                  {goal.name}
-                </h2>
-                <p>{goal.description}</p>
-                
-                {isSelected && (
-                  <div className="mt-4">
-                    <p className="font-bold">Includes:</p>
-                    <ul className="list-disc list-inside">
-                      {goal.subOptions.map((option, idx) => (
-                        <li key={idx}>{option}</li>
-                      ))}
-                    </ul>
+      {/* Cards container with min-height to prevent jumping */}
+      <div className="min-h-[450px]">
+        <motion.div 
+          className="flex flex-wrap -mx-3"
+          variants={container}
+          initial="hidden"
+          animate="show"
+        >
+          {goals.map((goal) => {
+            const isSelected = state.goal?.id === goal.id;
+            
+            return (
+              <motion.div 
+                key={goal.id}
+                variants={item}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full md:w-1/2 px-3 mb-6"
+              >
+                <div 
+                  className={`card ${isSelected ? 'bg-primary text-primary-content' : 'bg-base-100'} shadow-xl hover:shadow-2xl transition-all cursor-pointer h-full`}
+                  onClick={() => handleSelectGoal(goal)}
+                >
+                  <div className="card-body">
+                    <h2 className="card-title">
+                      <span className="text-2xl">{goal.icon}</span>
+                      {goal.name}
+                    </h2>
+                    <p>{goal.description}</p>
+                    
+                    <AnimatePresence>
+                      {isSelected && (
+                        <motion.div 
+                          className="mt-4"
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <p className="font-bold">Includes:</p>
+                          <ul className="list-disc list-inside">
+                            {goal.subOptions.map((option, idx) => (
+                              <li key={idx}>{option}</li>
+                            ))}
+                          </ul>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
-                )}
-                
-                <div className="card-actions justify-end mt-4">
-                  <button 
-                    className={`btn ${isSelected ? 'btn-secondary' : 'btn-primary'}`}
-                  >
-                    {isSelected ? 'Selected' : 'Select'}
-                  </button>
                 </div>
-              </div>
-            </div>
-          );
-        })}
+              </motion.div>
+            );
+          })}
+        </motion.div>
       </div>
       
-      <div className="flex justify-between mt-8">
+      {/* Regular button positioning */}
+      <motion.div 
+        className="flex justify-between mt-8"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5, duration: 0.5 }}
+      >
         <button 
           className="btn btn-outline"
           onClick={() => navigate('/plans')}
@@ -109,7 +148,7 @@ function Goals() {
         >
           Continue to Add-ons
         </button>
-      </div>
+      </motion.div>
     </div>
   );
 }

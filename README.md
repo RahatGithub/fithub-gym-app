@@ -21,8 +21,43 @@ Developed a responsive Gym Subscription App with React 19, hooks, and context AP
 
 ## Screenshots
 
+## 📱 Responsive Design & Theme Modes
+
+Our app is fully responsive and supports both light and dark themes for optimal user experience.
+
+### Desktop View
+
+#### Light Mode
+![Desktop Light Mode](./src/assets/screenshots/desktop-light.png)
+*Desktop view of the landing page in light mode*
+
+#### Dark Mode
+![Desktop Dark Mode](./src/assets/screenshots/desktop-dark.png)
+*Desktop view of the landing page in dark mode*
+
+### Mobile View
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" width="200px">
+        <img src="./src/assets/screenshots/mobile-light.png" width="200px" alt="Mobile Light Mode"/>
+        <br />
+        <em>Mobile Light Mode</em>
+      </td>
+      <td align="center" width="200px">
+        <img src="./src/assets/screenshots/mobile-dark.png" width="200px" alt="Mobile Dark Mode"/>
+        <br />
+        <em>Mobile Dark Mode</em>
+      </td>
+    </tr>
+  </table>
+</div>
+
+The application automatically adapts to different screen sizes while maintaining full functionality and visual appeal. Users can toggle between light and dark themes using the theme switch in the navigation bar.
+
 ### Landing Page
-![Landing Page](./src/assets/screenshots/landing.png)
+![Landing Page Desktop Light](./src/assets/screenshots/landing-light.png)
 *Engaging landing page with motivational quotes to inspire users*
 
 ### Plan Selection

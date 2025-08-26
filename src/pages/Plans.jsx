@@ -67,28 +67,24 @@ function Plans() {
               whileTap={{ scale: 0.98 }}
             >
               <div 
-                className={`card ${isSelected ? 'bg-primary text-primary-content' : 'bg-base-100'} shadow-xl hover:shadow-2xl transition-all cursor-pointer`}
+                className={`card ${isSelected ? 'bg-primary text-primary-content' : 'bg-base-100'} shadow-xl hover:shadow-2xl transition-all cursor-pointer h-full`}
                 onClick={() => handleSelectPlan(plan)}
               >
-                <div className="card-body">
-                  <h2 className="card-title">{plan.name}</h2>
-                  <p className="text-2xl font-bold">${plan.basePrice}/month</p>
-                  
-                  {plan.discount > 0 && (
-                    <div className="badge badge-secondary">Save {plan.discount * 100}%</div>
-                  )}
+                <div className="card-body flex flex-col justify-between">
+                  <div>
+                    <h2 className="card-title">{plan.name}</h2>
+                    <p className="text-2xl font-bold">${plan.basePrice}/month</p>
+                    
+                    {plan.discount > 0 && (
+                      <div className="badge badge-secondary mt-2">Save {plan.discount * 100}%</div>
+                    )}
+                  </div>
                   
                   <div className="mt-4">
                     <p>Total: ${totalAfterDiscount.toFixed(2)}</p>
                     {savings > 0 && (
                       <p className="text-sm">You save: ${savings.toFixed(2)}</p>
                     )}
-                  </div>
-                  
-                  <div className="card-actions justify-end mt-4">
-                    <button className={`btn ${isSelected ? 'btn-secondary' : 'btn-primary'}`}>
-                      {isSelected ? 'Selected' : 'Select'}
-                    </button>
                   </div>
                 </div>
               </div>
