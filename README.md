@@ -19,46 +19,32 @@ Developed a responsive Gym Subscription App with React 19, hooks, and context AP
 - 🛒 Simulated payment gateway interface
 - ⚡ Smooth animations and transitions
 
-## Screenshots
+*Our app is fully responsive and supports both light and dark themes for optimal user experience. The app automatically adapts to different screen sizes while maintaining full functionality and visual appeal. Users can toggle between light and dark themes using the theme switch in the navigation bar.*
 
-## 📱 Responsive Design & Theme Modes
+## Landing Page
 
-Our app is fully responsive and supports both light and dark themes for optimal user experience.
+![Desktop Light Mode](./src/assets/screenshots/landing-light.png)
+*Desktop View - Light Mode*
 
-### Desktop View
-
-#### Light Mode
-![Desktop Light Mode](./src/assets/screenshots/desktop-light.png)
-*Desktop view of the landing page in light mode*
-
-#### Dark Mode
-![Desktop Dark Mode](./src/assets/screenshots/desktop-dark.png)
-*Desktop view of the landing page in dark mode*
-
-### Mobile View
+![Desktop Dark Mode](./src/assets/screenshots/landing-dark.png)
+*Desktop View - Dark Mode*
 
 <div align="center">
   <table>
     <tr>
-      <td align="center" width="200px">
-        <img src="./src/assets/screenshots/mobile-light.png" width="200px" alt="Mobile Light Mode"/>
+      <td align="center" width="300px">
+        <img src="./src/assets/screenshots/landing-mobile-light.png" width="300px" alt="Mobile Light Mode"/>
         <br />
-        <em>Mobile Light Mode</em>
+        <em>Mobile View - Light Mode</em>
       </td>
-      <td align="center" width="200px">
-        <img src="./src/assets/screenshots/mobile-dark.png" width="200px" alt="Mobile Dark Mode"/>
+      <td align="center" width="300px">
+        <img src="./src/assets/screenshots/landing-mobile-dark.png" width="300px" alt="Mobile Dark Mode"/>
         <br />
-        <em>Mobile Dark Mode</em>
+        <em>Mobile View - Dark Mode</em>
       </td>
     </tr>
   </table>
 </div>
-
-The application automatically adapts to different screen sizes while maintaining full functionality and visual appeal. Users can toggle between light and dark themes using the theme switch in the navigation bar.
-
-### Landing Page
-![Landing Page Desktop Light](./src/assets/screenshots/landing-light.png)
-*Engaging landing page with motivational quotes to inspire users*
 
 ### Plan Selection
 ![Plan Selection](./src/assets/screenshots/plans.png)
@@ -81,7 +67,8 @@ The application automatically adapts to different screen sizes while maintaining
 *Professional quotation with download as PDF functionality*
 
 ### Payment Interface
-![Payment Interface](./src/assets/screenshots/payment.png)
+![Payment Interface](./src/assets/screenshots/payment.png) 
+<br>
 *Secure and intuitive payment simulation interface*
 
 ## How to Run the Project
@@ -94,7 +81,7 @@ The application automatically adapts to different screen sizes while maintaining
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/fithub-gym-app.git
+git clone https://github.com/RahatGithub/fithub-gym-app.git
 cd fithub-gym-app
 ```
 
@@ -123,7 +110,7 @@ The build files will be in the `dist` directory.
 - React 19.1.1
 - React Router 6
 - Framer Motion (animations)
-- DaisyUI & Tailwind CSS (styling)
+- DaisyUI (styling)
 - html2canvas & jsPDF (PDF generation)
 - Vite (build tool)
 
@@ -141,7 +128,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Author
 
-Your Name - [Your GitHub Profile](https://github.com/yourusername)
+Rahat - [GitHub Profile](https://github.com/RahatGithub)
 
 ---
 
